@@ -16,6 +16,11 @@ public class StudentDao {
         return studentMapper.getStudents();
     }
 
+    public List<StudentDO> getStudentsByLoginName(final String loginName){
+        return studentMapper.getStudentByLoginName(loginName);
+    }
+
+
     public List<StudentDO> getStudent(final String stuNum) {
         return studentMapper.getStudent(stuNum);
     }

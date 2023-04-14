@@ -12,6 +12,8 @@ public interface StudentMapper {
 
     List<StudentDO> getStudent(@Param("stuNum") String stuNum);
 
+    List<StudentDO> getStudentByLoginName(@Param("loginName")String loginName);
+
     int saveStudent(@Param("stu") StudentDO stu);
 
     int deleteStudent(@Param("stuNum") String stuNum);

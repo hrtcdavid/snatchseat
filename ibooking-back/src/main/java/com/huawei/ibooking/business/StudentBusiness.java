@@ -26,6 +26,14 @@ public class StudentBusiness {
         return Optional.ofNullable(students.get(0));
     }
 
+    public Optional<StudentDO> getStudentByLoginName(final String loginName){
+        List<StudentDO> students = studentDao.getStudentsByLoginName(loginName);
+        if(students.isEmpty()){
+            return Optional.empty();
+        }
+        return Optional.ofNullable(students.get(0));
+    }
+
     public boolean saveStudent(final StudentDO stu) {
         return studentDao.saveStudent(stu);
     }

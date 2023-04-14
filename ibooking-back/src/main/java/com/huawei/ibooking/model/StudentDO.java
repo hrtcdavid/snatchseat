@@ -13,4 +13,9 @@ public class StudentDO {
     private String stuNum;
     private String name;
     private String password;
+    private String loginName;
+    private String roleType;
+    private String email;
+
+
 }

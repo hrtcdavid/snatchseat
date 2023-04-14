@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<!--导入thymeleaf的名称空间-->
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<meta charset="UTF-8">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<!--th:text 为 Thymeleaf 属性，用于获取指定属性的值-->
+<h1 th:text="'欢迎来到'+#{login.login}"></h1>
+<a class="btn btn-sm" th:href="@{/hello(l='zh_CN')}">中文</a>|
+<a class="btn btn-sm" th:href="@{/hello(l='en_US')}">English</a>
+</body>
+</html>

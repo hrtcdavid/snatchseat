@@ -28,6 +28,9 @@
             <th field="id" width="50">ID</th>
             <th field="stuNum" width="50">学号</th>
             <th field="name" width="50">姓名</th>
+            <th field="loginName" width="50">登录名</th>
+            <th field="roleType" width="50" formatter="showRoleType">角色</th>
+            <th field="email" width="50">邮箱</th>
         </tr>
         </thead>
     </table>
@@ -52,12 +55,29 @@
             </div>
             <div style="margin-bottom:10px">
                 <input class="easyui-textbox" label="姓名:" prompt="请输入姓名" name="name" required="true"
-                       data-options="multiline:false,validType:'length[6,16]'" id="nameInput"
+                       data-options="multiline:false,validType:'length[4,80]'" id="nameInput"
+                       style="width:100%">
+            </div>
+            <div style="margin-bottom:10px">
+                <input class="easyui-textbox" label="登录名:" prompt="请输入登录名" name="loginName" required="true"
+                       data-options="multiline:false,validType:'length[4,16]'" id="loginNameInput"
                        style="width:100%">
             </div>
             <div style="margin-bottom:10px">
                 <input class="easyui-passwordbox" label="密码:" prompt="请输入密码" name="password" required="true"
                        data-options="multiline:false,validType:'length[8,16]'"
+                       style="width:100%">
+            </div>
+            <div style="margin-bottom:10px">
+                <select class="easyui-combobox" label="角色:" name="roleType" required="true" editable="false"
+                        data-options="multiline:false,validType:'length[4,16]'" id="roleTypeInput"
+                        style="width:240px;">
+                    <option value="1">学生</option>
+                    <option value="2">管理员</option>
+                </select>
+            </div>
+            <div style="margin-bottom:10px">
+                <input class="easyui-textbox" label="邮箱:" prompt="请输入邮箱" name="email" required="false" id="emailInput"
                        style="width:100%">
             </div>
         </form>
@@ -147,6 +167,17 @@
                 }
             })
         }
+    }
+
+    function showRoleType(value, row, index) {
+        if(value == 1) {
+            return "学生";
+        } else if(value == 2) {
+            return "管理员";
+        } else {
+            return value;
+        }
+
     }
 </script>
 </body>

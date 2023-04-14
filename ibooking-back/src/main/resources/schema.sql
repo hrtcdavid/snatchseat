@@ -1,12 +1,16 @@
 drop table if exists tbl_student;
 create table tbl_student
 (
-    id       int         not null auto_increment,
-    stuNum   varchar(16) not null,
-    name     varchar(16) not null,
-    password varchar(16) not null,
+    id          int         not null auto_increment,
+    stuNum      varchar(16) not null,
+    name        varchar(256) not null,
+    loginName   varchar(16) not null,
+    password    varchar(128) not null,
+    roleType    char(1) not null,
+    email       varchar(256),
     primary key (id),
-    unique (stuNum)
+    unique (stuNum),
+    unique (loginName)
 );
 
 drop table if exists tbl_studyroom;

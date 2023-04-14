@@ -6,7 +6,11 @@ spring:
     view:
       prefix: /views/
       suffix: .html
-        
+
+  messages:
+    basename: i18n.ibook
+    fallback-to-system-locale: false
+
   datasource:
     name: ibookingdb
     url: jdbc:h2:mem:ibookingdb
@@ -21,6 +25,9 @@ spring:
       data-locations: classpath:data.sql
       mode: always
 
+  thymeleaf:
+    prefix: classpath:/static/views/
+
 mybatis:
   mapper-locations: classpath:com.huawei.ibooking.mapper/*.xml
   type-aliases-package: com.huawei.ibooking.model
@@ -28,3 +35,5 @@ mybatis:
 logging:
   level:
     com.huawei.ibooking: debug
+
+
